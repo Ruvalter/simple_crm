@@ -1,0 +1,16 @@
+<%= simple_form_for @product do |f| %>
+
+  <% if @product.errors.any? %>
+    <ul>
+      <% @product.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.input :name %>
+  <%= f.input :company_id, collection: Company.all, value_method: :id, label: "Empresa", include_blank: true %>
+  <%= f.input :description %>
+
+  <%= f.button :submit %>
+<% end %>

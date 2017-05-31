@@ -1,0 +1,8 @@
+<h1><%= @company.name %></h1>
+
+<% @company.products.each do |product| %>
+  <p><%= product.name %></p>
+<% end %>
+
+
+<%= link_to "Voltar para a lista", companies_path %>

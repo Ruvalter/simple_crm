@@ -1,0 +1,15 @@
+<h1>Empresas</h1>
+
+<table class="table">
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= link_to "Editar", edit_company_path(company) %></td>
+      <td><%= link_to "Deletar", company, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to "Criar empresa", new_company_path  %>
+</p>
